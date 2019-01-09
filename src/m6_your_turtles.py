@@ -30,13 +30,34 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 ########################################################################
 import rosegraphics as rg
 
-window=rg.TurtleWindow()
-yellow_turtle=rg.SimpleTurtle('turtle')
-yellow_turtle.pen=rg.pen('yellow',5)
-yellow_turtle.speed=10
 
-size=100
+window = rg.TurtleWindow()
 
-for k in range(10)
-    yellow_turtle.draw_square(size)
-    yellow_turtle()
+will = rg.SimpleTurtle('turtle')
+will.pen = rg.Pen('green', 1)
+will.speed = 50
+
+
+size = 300
+sin = rg.SimpleTurtle('turtle')
+sin.pen = rg.Pen('blue', 1 )
+sin.speed = 50
+
+for k in range(9):
+
+    size = size - 12
+    will.draw_square(size)
+    will.pen_up()
+    will.forward(10)
+    will.pen_down()
+    size = size - 10
+
+    size = size - 12
+    sin.draw_square(size)
+    sin.pen_up()
+
+    sin.forward(10)
+    sin.pen_down()
+    size = size - 10
+
+window.close_on_mouse_click()
